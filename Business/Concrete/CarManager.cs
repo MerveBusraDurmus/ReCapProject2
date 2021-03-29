@@ -18,7 +18,15 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
-            _cardal.Add(car);
+            if (car.DailyPrice>0)
+            {
+                _cardal.Add(car);
+            }
+            else
+            {
+                throw new Exception("Araba'nın günlük fiyatı 0'dan büyük olmalıdır");
+            }
+            
         }
 
         public void Delete(Car car)
