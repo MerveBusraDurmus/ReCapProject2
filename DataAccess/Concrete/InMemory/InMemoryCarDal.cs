@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
@@ -43,15 +44,22 @@ namespace DataAccess.Concrete.InMemory
             return _cars;
         }
 
-        public List<Car> GetById(int carId)  //???????
+
+        public List<Car> GetAllByCarId(int carId)
         {
-           return _cars.Where(p => p.Id == carId).ToList();
-           
+            return _cars.Where(p => p.Id == carId).ToList();
         }
 
         public void Update(Car car)
         {
-            throw new NotImplementedException();
+            Car carToUpdate = _cars.SingleOrDefault(p => p.Id == car.Id);
+            carToUpdate.BrandId = car.BrandId;
+            carToUpdate.ColorId = car.ColorId;
+            carToUpdate.FuelId = car.FuelId;
+            carToUpdate.GearId = car.GearId;
+            carToUpdate.ModelYear = car.ModelYear;
+            carToUpdate.Kilometer = car.Kilometer;
+            carToUpdate.DailyPrice = car.DailyPrice;
         }
     }
 }
