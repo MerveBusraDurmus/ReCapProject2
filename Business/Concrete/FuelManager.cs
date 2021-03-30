@@ -31,6 +31,11 @@ namespace Business.Concrete
             return _fuelDal.GetAll();
         }
 
+        public Fuel GetById(int fuelId)
+        {
+            return _fuelDal.Get(f => f.Id == fuelId);
+        }
+
         public void Update(Fuel fuel)
         {
             _fuelDal.Update(fuel);

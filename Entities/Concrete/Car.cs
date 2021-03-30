@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +14,7 @@ namespace Entities.Concrete
         public int FuelId { get; set; }
         public int ModelYear { get; set; }
         public decimal DailyPrice { get; set; }
-        public double Kilometer { get; set; }
+        public int Kilometer { get; set; }
 
 
     }

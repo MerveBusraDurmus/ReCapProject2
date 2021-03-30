@@ -31,6 +31,11 @@ namespace Business.Concrete
             return _gearDal.GetAll();
         }
 
+        public Gear GetById(int gearId)
+        {
+            return _gearDal.Get(g => g.Id == gearId);
+        }
+
         public void Update(Gear gear)
         {
             _gearDal.Update(gear);
