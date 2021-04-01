@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -20,29 +21,29 @@ namespace Business.Concrete
         public IResult Add(Gear gear)
         {
             _gearDal.Add(gear);
-            return new SuccessResult();
+            return new SuccessResult(Messages.GearTypeAdded);
         }
 
         public IResult Delete(Gear gear)
         {
             _gearDal.Delete(gear);
-            return new SuccessResult();
+            return new SuccessResult(Messages.GearTypeDeleted);
         }
 
         public IDataResult<List<Gear>> GetAll()
         {
-            return new SuccessDataResult<List<Gear>>(_gearDal.GetAll());
+            return new SuccessDataResult<List<Gear>>(_gearDal.GetAll(),Messages.GearTypesListed);
         }
 
         public IDataResult<Gear> GetById(int gearId)
         {
-            return new SuccessDataResult<Gear>(_gearDal.Get(g => g.Id == gearId));
+            return new SuccessDataResult<Gear>(_gearDal.Get(g => g.Id == gearId),Messages.GearTypeListed);
         }
 
         public IResult Update(Gear gear)
         {
             _gearDal.Update(gear);
-            return new SuccessResult();
+            return new SuccessResult(Messages.GearTypeUpdated);
         }
     }
 }

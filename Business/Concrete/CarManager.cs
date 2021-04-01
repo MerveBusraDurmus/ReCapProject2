@@ -25,7 +25,7 @@ namespace Business.Concrete
             {
                 
                 _cardal.Add(car);
-                return new SuccessResult();
+                return new SuccessResult(Messages.CarAdded);
             }
             else
             {
@@ -38,17 +38,17 @@ namespace Business.Concrete
         public IResult Delete(Car car)
         {
             _cardal.Delete(car);
-            return new SuccessResult();
+            return new SuccessResult(Messages.CarDeleted);
         }
 
         public IDataResult<List<Car>> GetAll()
         {
-            return new SuccessDataResult<List<Car>>(_cardal.GetAll());
+            return new SuccessDataResult<List<Car>>(_cardal.GetAll(),Messages.CarsListed);
         }
 
         public IDataResult<Car> GetById(int carId)
         {
-            return new SuccessDataResult<Car>(_cardal.Get(c => c.Id == carId));
+            return new SuccessDataResult<Car>(_cardal.Get(c => c.Id == carId), Messages.CarListed);
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()
