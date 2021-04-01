@@ -69,7 +69,7 @@ namespace Business.Concrete
         public IResult Update(Car car)
         {
             _cardal.Update(car);
-            return new SuccessResult();
+            return new SuccessResult(Messages.CarUpdated);
         }
     }
 }
