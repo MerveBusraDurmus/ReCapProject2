@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,10 +8,10 @@ namespace Business.Abstract
 {
     public interface IFuelService
     {
-        List<Fuel> GetAll();
-        Fuel GetById(int fuelId);
-        void Add(Fuel fuel);
-        void Delete(Fuel fuel);
-        void Update(Fuel fuel);
+        IDataResult<List<Fuel>> GetAll();
+        IDataResult<Fuel> GetById(int fuelId);
+        IResult Add(Fuel fuel);
+        IResult Delete(Fuel fuel);
+        IResult Update(Fuel fuel);
     }
 }
