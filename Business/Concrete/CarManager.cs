@@ -30,7 +30,7 @@ namespace Business.Concrete
             else
             {
                 
-                return new ErrorResult(Messages.DailyPrice);
+                return new ErrorResult(Messages.DailyPriceInvalid);
             }
             
         }
