@@ -11,7 +11,8 @@ namespace Business.ValidationRules.FluentValidation
     {
         public CarValidator()
         {
-            RuleFor(c => c.DailyPrice).GreaterThan(0);
+            RuleFor(c => c.DailyPrice).GreaterThan(5);
+            RuleFor(c =>c.ModelYear).GreaterThan(1995);
         }
     }
 }
