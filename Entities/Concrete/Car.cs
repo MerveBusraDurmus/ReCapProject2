@@ -14,7 +14,6 @@ namespace Entities.Concrete
         public int FuelId { get; set; }
         public int ModelYear { get; set; }
         public decimal DailyPrice { get; set; }
-        public int Kilometer { get; set; }
 
 
     }

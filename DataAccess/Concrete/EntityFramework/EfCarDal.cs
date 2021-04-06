@@ -34,7 +34,6 @@ namespace DataAccess.Concrete.EntityFramework
                                  //FuelType = f.FuelType,
                                  //GearType = g.GearType,
                                  ModelYear = c.ModelYear,
-                                 Kilometer = c.Kilometer,
                                  DailyPrice = c.DailyPrice
                              };
                 return result.ToList();

@@ -56,6 +56,10 @@ namespace Business.Constants
         public static string RentalDeleted = "Kiralama Seçimleri Silindi";
         public static string RentalUpdated = "Kiralama Seçimleri Güncellendi";
         public static string DateInvalid = "Araç Teslim Edilmemiştir";
-        
+
+        public static string CarImageAdded = "Araç Resmi Eklendi";
+        public static string CarImageDeleted = "Araç Resmi Silindi";
+        public static string CarImageUpdated = "Araç Resmi Güncellendi";
+        public static string CarImagesLimitExceded="Limit aşıldığı için yeni resim eklenemiyor";
     }
 }
